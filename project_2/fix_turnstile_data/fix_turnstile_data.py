@@ -32,7 +32,16 @@ def fix_turnstile_data(filenames):
     https://www.dropbox.com/s/074xbgio4c39b7h/solution_turnstile_110528.txt
     '''
     for name in filenames:
-        # your code here
+        with open(name, 'r') as f, open("updated_" + name, 'w') as w:
+            reader = csv.reader(f)
+            writer  =csv.writer(w)
+            content = []
+            
+            for row in reader:
+                for i in range(0, (len(row)-3)/5):
+                    content.append(row[0:3] + row[i*5+3:i*5+8])
+                 
+            writer.writerows(content)
 
 if __name__ == "__main__":
     input_files = ['turnstile_110528.txt', 'turnstile_110604.txt']

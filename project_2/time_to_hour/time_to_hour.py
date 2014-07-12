@@ -1,4 +1,4 @@
-import pandas
+import pandas as pd
 
 def time_to_hour(time):
     '''
@@ -14,8 +14,8 @@ def time_to_hour(time):
     Please return hour as an integer.
     '''
     
-    hour = # your code here
-    return hour
+    print int(time[0:2])
+    
 
 if __name__ == "__main__":
     input_filename = "turnstile_data_master_subset_consolidate_rows.csv"

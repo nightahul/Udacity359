@@ -23,7 +23,9 @@ def max_temp_aggregate_by_fog(filename):
     weather_data = pd.read_csv(filename)
 
     q = """
-    your query here
+    select count(*)
+    from weather_data
+    where cast(rain as integer) = 1
     """
     
     #Execute your SQL command against the pandas frame

@@ -1,4 +1,5 @@
 import datetime
+import pandas as pd
 
 def reformat_subway_dates(date):
     '''
@@ -14,9 +15,10 @@ def reformat_subway_dates(date):
     More info can be seen here:
     http://docs.python.org/2/library/datetime.html#datetime.datetime.strptime
     '''
-
-    date_formatted = # your code here
-    return date_formatted
+    
+    date_formatted = datetime.datetime.strptime(date, '%m-%d-%y')
+    date_formatted = date_formatted.strftime('%Y-%m-%d')
+    return (date_formatted)[:10]
 
 if __name__ == "__main__":
     input_filename = "turnstile_data_master_subset_time_to_hours.csv"
